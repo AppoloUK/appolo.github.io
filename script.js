@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+
 let particles = [];
 
 class Particle {
@@ -138,8 +139,6 @@ function displayUKTime() {
 
 displayUKTime();  // Call the function to start the clock
 
-
-
 function startTyping() {
     currentPhrase = phrases[i];
     typeLoop();
@@ -148,4 +147,5 @@ function startTyping() {
 // Start typing when page loads
 window.onload = startTyping;
 
-// Typewriter effect for "Huzzah!" is removed as it conflicts with the global typewriter effect
+
+

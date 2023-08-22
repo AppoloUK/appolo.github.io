@@ -23,13 +23,13 @@ body {
 }
 
 .nav-button {
-    background-color: transparent;
     color: white;
-    border: none;
+    text-decoration: none;
     padding: 10px 20px;
-    cursor: pointer;
     transition: color 0.3s ease;
     font-size: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-button:hover {
@@ -200,6 +200,8 @@ nav a:hover {
 .about-section {
     display: flex;
     align-items: center;
+    justify-content: center; /* centers the entire section horizontally */
+    height: 100vh; /* takes up the full viewport height */
     padding: 50px;
 }
 
@@ -247,6 +249,8 @@ nav a:hover {
     font-weight: bold;
     margin-bottom: 50px;
     text-align: center;
+    opacity: 0;
+    animation: fadeInHuzzah 2s forwards 1s;
 }
 
 .video-grid {
@@ -280,3 +284,20 @@ iframe {
 .clock-container i {
     margin-right: 10px;
 }
+
+@keyframes fadeInHuzzah {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
