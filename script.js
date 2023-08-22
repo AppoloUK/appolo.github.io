@@ -86,31 +86,66 @@ window.addEventListener("resize", () => {
 });
 
 
+// Particle System
+// ... [Keep the existing particle system code]
+
+// Typewriter Effect
 const phrases = ["Coding...", "Creating...", "Innovating...", "Designing...", "Building..."];
+const typingText = document.querySelector(".typing-text");
 let i = 0;
 let j = 0;
 let isDeleting = false;
+let currentPhrase = "";
 
-function loop() {
+function typeLoop() {
     if (isDeleting) {
         if (j > 0) {
             j--;
-            setTimeout(loop, 100);
+            typingText.textContent = currentPhrase.substr(0, j);
+            setTimeout(typeLoop, 100);
         } else {
             isDeleting = false;
             i = (i + 1) % phrases.length;
-            setTimeout(loop, 500);
+            currentPhrase = phrases[i];  // Update the phrase after deleting
+            setTimeout(typeLoop, 500);
         }
     } else {
-        if (j < phrases[i].length) {
+        if (j < currentPhrase.length) {
             j++;
-            setTimeout(loop, 200);
+            typingText.textContent = currentPhrase.substr(0, j);
+            setTimeout(typeLoop, 200);
         } else {
             isDeleting = true;
-            setTimeout(loop, 1000);
+            setTimeout(typeLoop, 1000);
         }
     }
-    document.querySelector(".typing-text").textContent = phrases[i].substr(0, j);
 }
 
-loop();
+function displayUKTime() {
+    const ukOptions = {
+        timeZone: "Europe/London",
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    };
+
+    const ukTime = new Intl.DateTimeFormat('en-GB', ukOptions).format(new Date());
+    document.getElementById('uk-time').textContent = ukTime;
+
+    setTimeout(displayUKTime, 1000); // Update every second
+}
+
+displayUKTime();  // Call the function to start the clock
+
+
+
+function startTyping() {
+    currentPhrase = phrases[i];
+    typeLoop();
+}
+
+// Start typing when page loads
+window.onload = startTyping;
+
+// Typewriter effect for "Huzzah!" is removed as it conflicts with the global typewriter effect

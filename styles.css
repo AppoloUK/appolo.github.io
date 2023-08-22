@@ -112,18 +112,20 @@ body {
 }
 
 .typewriter {
+    width: 100%; /* Take the full width */
     position: absolute;
-    top: 30%;  /* Start position */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 32px;
-    color: #aaa;
-    white-space: nowrap;
-    overflow: hidden;
+    top: 30%;  /* Adjust if needed */
+    left: 0%;
+    transform: translateX(-50%);
+    text-align: center; /* Center the text horizontally */
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
     z-index: 1;
     opacity: 0;
     animation: typeMove 1s forwards 1.5s, fadeIn 1s forwards;
 }
+
 
 .cursor {
     animation: blink 1s infinite;
@@ -163,4 +165,118 @@ body {
     50% {
         opacity: 0;
     }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* About Page Styles */
+.about-section {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+
+#about-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+    transition: transform 0.3s ease;
+}
+
+#about-pic:hover {
+    transform: scale(1.1);
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Past Works Page Styles */
+.works-section {
+    padding: 50px;
+}
+
+#animated-text {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.video-slot {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+iframe {
+    width: 300px;
+    height: 168px; /* 16:9 aspect ratio */
+}
+
+.clock-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    justify-content: center;  /* This will horizontally center the content */
+    width: 100%;               /* This will ensure the container takes full width of the card */
+}
+
+.clock-container i {
+    margin-right: 10px;
 }
