@@ -67,15 +67,6 @@ body {
     transform: translateY(-10px);
 }
 
-.profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
-}
-
 #profilePic {
     width: 100px;       /* Adjust width as needed */
     height: 100px;      /* Adjust height as needed */
@@ -83,6 +74,7 @@ body {
     object-fit: cover;  /* Ensures the image covers the dimensions without distortion */
     margin: 10px auto;  /* Centers the image and gives a margin */
 }
+
 
 .name, .bio, .icons a {
     color: white;
