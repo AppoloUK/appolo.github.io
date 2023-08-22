@@ -76,6 +76,14 @@ body {
     display: block;
 }
 
+#profilePic {
+    width: 100px;       /* Adjust width as needed */
+    height: 100px;      /* Adjust height as needed */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover;  /* Ensures the image covers the dimensions without distortion */
+    margin: 10px auto;  /* Centers the image and gives a margin */
+}
+
 .name, .bio, .icons a {
     color: white;
     text-align: center;
