@@ -1,8 +1,42 @@
-// Particle System
 const canvas = document.getElementById("particleCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+const backgroundMusic = document.getElementById("backgroundMusic");
+const toggleAudioButton = document.getElementById("toggleAudio");
+const audioIcon = toggleAudioButton.querySelector('i');
+const backgroundVideo = document.getElementById("backgroundVideo");
+const splashScreen = document.getElementById("splashScreen");
+const splashText = document.getElementById("splashText");
+const textToType = "Click any key to continue";
+
+// Hide splash screen on click/tap
+function hideSplashScreen() {
+    splashScreen.style.display = "none"; // or splashScreen.classList.add('none');
+    backgroundVideo.play();
+    backgroundMusic.play();
+    document.removeEventListener('click', hideSplashScreen);
+}
+
+// Play the music and video on the first user interaction
+document.addEventListener('click', hideSplashScreen, { once: true });
+
+
+// Play the music on the first user interaction
+document.addEventListener('click', function() {
+    backgroundVideo.play();
+    backgroundMusic.play();
+}, { once: true });
+
+toggleAudioButton.addEventListener('click', () => {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        audioIcon.className = "fas fa-volume-up"; // Update icon to volume up
+    } else {
+        backgroundMusic.pause();
+        audioIcon.className = "fas fa-volume-mute"; // Update icon to mute
+    }
+});
 
 
 let particles = [];

@@ -301,3 +301,72 @@ canvas {
     pointer-events: none;
 }
 
+.audio-control {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 5; /* Ensure it's above other elements */
+}
+
+.audio-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.audio-button:hover {
+    background-color: #555;
+}
+
+.audio-button i {
+    font-size: 18px;
+}
+
+#backgroundVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Ensure it's behind other content */
+    opacity: 0.5;
+}
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    z-index: 9999; /* Ensure it's above other elements */
+}
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typewriter-text {
+    border-right: 0.15em solid orange; /* Cursor */
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+    animation: typewriter 4s steps(40, end); /* Adjust 4s to control speed */
+}	
+
+#splashScreen.none {
+    display: none; /* Hide it when the class is applied */
+}

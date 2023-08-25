@@ -18,6 +18,19 @@
 </head>
 <body>
 <canvas id="particleCanvas"></canvas>
+<div id="splashScreen" class="splash-screen">
+    <p>Click any key to continue</p>
+</div>
+<audio id="backgroundMusic" autoplay muted loop>
+    <source src="music.mp3" type="audio/mpeg"> <!-- Change 'music.mp3' with the path to your audio file -->
+</audio>
+<div class="audio-control">
+    <button id="toggleAudio" class="audio-button"><i class="fas fa-volume-up"></i></button>
+</div>
+<video id="backgroundVideo" loop >
+    <source src="video.mp4" type="video/mp4"> <!-- Change 'video.mp4' with the path to your video file -->
+    Your browser does not support the video tag.
+</video>
 <div class="navbar">
     <a href="./index.html" class="nav-button"><i class="fas fa-home"></i> Home</a>
     <a href="./about.html" class="nav-button"><i class="fas fa-user"></i> About Me</a>
@@ -34,7 +47,7 @@
     <div class="card">
         <img src="pfp.jpg" alt="Profile Picture" class="profile-pic">
         <h1 class="name">Appolo</h1>
-        <p class="bio">Multi-language programmer, Coffee Lover, and AI Enthusiast. Always learning and pushing boundaries.</p>
+        <p class="bio">Some guy who likes programming ¯\_(ツ)_/¯</p>
         <div class="clock-container">
             <span id="uk-time"></span>
         </div>
